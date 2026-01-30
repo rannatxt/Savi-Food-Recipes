@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savi</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    
+    <header class="header">
+        <div class="container">
+            <div class="nav">
+                <div class="logo">
+                    <h1>🍳 Savi </h1>
+                </div>
+                <nav class="nav-menu">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#recipes" class="nav-link">Recipes</a>
+                    <a href="#favorites" class="nav-link">Favorites</a>
+                </nav>
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search recipes" class="search-input">
+                    <button class="search-btn">🔍</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">Discover Delicious Recipes</h2>
+                <p class="hero-subtitle">Step-by-step cooking made easy</p>
+                <button class="cta-btn" onclick="scrollToRecipes()">Explore Recipes</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="filters" id="recipes">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">All Recipes</button>
+                <button class="filter-btn" data-category="breakfast">Breakfast</button>
+                <button class="filter-btn" data-category="lunch">Lunch</button>
+                <button class="filter-btn" data-category="dinner">Dinner</button>
+                <button class="filter-btn" data-category="dessert">Dessert</button>
+                <button class="filter-btn" data-category="vegetarian">Vegetarian</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="recipes-section">
+        <div class="container">
+            <div id="recipesGrid" class="recipes-grid">
+            </div>
+        </div>
+    </section>
+
+    <div id="recipeModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-body">
+                <div class="recipe-header">
+                    <img id="modalImage" src="" alt="" class="recipe-modal-image">
+                    <div class="recipe-info">
+                        <h2 id="modalTitle"></h2>
+                        <div class="recipe-meta">
+                            <span class="meta-item">⏱️ <span id="modalTime"></span></span>
+                            <span class="meta-item">🍽️ <span id="modalServings"></span></span>
+                            <span class="meta-item">📊 <span id="modalDifficulty"></span></span>
+                        </div>
+                        <button class="favorite-btn" id="favoriteBtnModal">
+                            <span class="heart">♡</span> Add to Favorites
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="recipe-details">
+                    <div class="ingredients-section">
+                        <h3>Ingredients</h3>
+                        <ul id="modalIngredients"></ul>
+                    </div>
+                    
+                    <div class="instructions-section">
+                        <h3>Step-by-Step Instructions</h3>
+                        <div id="modalInstructions"></div>
+                    </div>
+
+                    <div class="nutrition-section">
+                        <h3>Nutrition Information (per serving)</h3>
+                        <div id="modalNutrition" class="nutrition-grid"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="favorites-section" id="favorites">
+        <div class="container">
+            <h2 class="section-title">Your Favorite Recipes</h2>
+            <div id="favoritesGrid" class="recipes-grid">
+                <p class="empty-message">No favorites yet. Start adding your favorite recipes!</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; Savi - Your Recipe Companion. 
+                 Made with for food lovers.</p>
+        </div>
+    </footer>
+
+    <script src="recipes-data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
